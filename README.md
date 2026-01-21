@@ -54,9 +54,9 @@ The dataset includes hourly records of bike rentals, weather conditions, and oth
 ```bash
 pip install -r requirements.txt
 
-## **Run the preprocessing and modeling scripts**
+#Run the preprocessing and modeling scripts
 
-To execute the preprocessing and model training, run the following command:
+#To execute the preprocessing and model training, run the following command:
 
 ```bash
 python bike_demand_prediction.py
