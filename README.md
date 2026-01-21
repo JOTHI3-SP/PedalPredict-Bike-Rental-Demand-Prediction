@@ -58,5 +58,5 @@ pip install -r requirements.txt
 
 #To execute the preprocessing and model training, run the following command:
 
-```bash
+
 python bike_demand_prediction.py
