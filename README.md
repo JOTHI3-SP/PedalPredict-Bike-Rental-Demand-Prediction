@@ -1,73 +1,62 @@
-# PedalPredict-Bike-Rental-Demand-Prediction
-This project builds an end-to-end machine learning pipeline to predict bike rental demand using weather and temporal features. It involves data preprocessing, feature engineering, regression model training, and performance evaluation using MSE and R² score to support urban mobility planning and demand forecasting.
+# **End-to-End Bike Rental Demand Prediction Using Machine Learning**
 
-##End-to-End Bike Rental Demand Prediction Using Machine Learning
-
-Project Overview
+## **Project Overview**
 
 This project implements an end-to-end machine learning pipeline to predict bike rental demand using historical usage data along with weather and temporal features. The goal is to understand the factors influencing bike rental patterns and build a reliable predictive model that can assist in urban mobility planning and resource optimization.
 
-##Features and Preprocessing
+## **Features and Preprocessing**
 
-Numerical Features: HOUR, TEMPERATURE, HUMIDITY, WIND_SPEED, VISIBILITY, DEW_POINT_TEMPERATURE, SOLAR_RADIATION, RAINFALL, SNOWFALL
+**Numerical Features:** HOUR, TEMPERATURE, HUMIDITY, WIND_SPEED, VISIBILITY, DEW_POINT_TEMPERATURE, SOLAR_RADIATION, RAINFALL, SNOWFALL  
 
-Categorical Features: SEASONS, HOLIDAY, FUNCTIONING_DAY
+**Categorical Features:** SEASONS, HOLIDAY, FUNCTIONING_DAY  
 
-##Feature Engineering:
+## **Feature Engineering**
 
-Cyclic encoding of HOUR (sine and cosine)
+- Cyclic encoding of HOUR (sine and cosine)  
+- Interaction feature between HOUR and TEMPERATURE  
+- One-hot encoding of categorical variables  
+- Scaling: StandardScaler applied to numerical features for model stability  
 
-Interaction feature between HOUR and TEMPERATURE
+## **Modeling**
 
-One-hot encoding of categorical variables
+- **Regression Models:** Linear Regression (baseline), with potential extension to Random Forest or Gradient Boosting for improved performance  
+- **Training and Testing:** Dataset split into training and test sets (80/20)  
 
-Scaling: StandardScaler applied to numerical features for model stability
+## **Evaluation Metrics**
 
-##Modeling
+- Mean Squared Error (MSE)  
+- R² Score  
 
-Regression Models: Linear Regression (baseline), with potential extension to Random Forest or Gradient Boosting for improved performance
+## **Results**
 
-Training and Testing: Dataset split into training and test sets (80/20)
+Baseline Linear Regression model achieved:  
 
-##Evaluation Metrics:
-
-Mean Squared Error (MSE)
-
-R² Score
-
-##Results
-
-Baseline Linear Regression model achieved:
-
-Mean Squared Error: 176,918.98
-
-R² Score: 0.58
+- **Mean Squared Error:** 176,918.98  
+- **R² Score:** 0.58  
 
 The model demonstrates moderate predictive ability and highlights the impact of weather and temporal features on bike rental demand.
 
-##Future Improvements
+## **Future Improvements**
 
-Experiment with more advanced models such as Random Forest, Gradient Boosting, or XGBoost
+- Experiment with more advanced models such as Random Forest, Gradient Boosting, or XGBoost  
+- Include additional external features (e.g., holidays, special events, or real-time traffic data)  
+- Perform hyperparameter tuning for better model performance  
+- Explore log transformation of the target variable to reduce skewness  
 
-Include additional external features (e.g., holidays, special events, or real-time traffic data)
-
-Perform hyperparameter tuning for better model performance
-
-Explore log transformation of the target variable to reduce skewness
-
-##Dataset
+## **Dataset**
 
 The dataset includes hourly records of bike rentals, weather conditions, and other temporal features. All preprocessing and feature engineering steps are included in the code.
 
-##Usage
+## **Usage**
 
-Clone the repository
-
-Install required Python packages:
-
+1. Clone the repository  
+2. Install required Python packages:  
+```bash
 pip install -r requirements.txt
 
+## **Run the preprocessing and modeling scripts**
 
-##Run the preprocessing and modeling scripts:
+To execute the preprocessing and model training, run the following command:
 
+```bash
 python bike_demand_prediction.py
